@@ -1,9 +1,8 @@
 document.getElementById('loan-calculator').addEventListener('submit',calculateResults);
 
 function calculateResults(e){
-
-  console.log('calculating...');
-
+  e.preventDefault();
+  
   const amount = document.getElementById('amount');
   const interest = document.getElementById('interest');
   const years = document.getElementById('years');
@@ -22,10 +21,11 @@ function calculateResults(e){
    monthlyPayment.value = monthly.toFixed(2);
    totalPayment.value = (monthly * calculatedPayment).toFixed(2);
    totalInterest.value = ((monthly * calculatedPayment)- principal).toFixed(2);
+   document.getElementById('results').style.display = 'block';
+   document.getElementById('loading').style.display = 'none';
   } else{
-    showError('Please Check Your Numbers');
+    showError('Please check your numbers');
   }
-  e.preventDefault();
 }
 
  function showError(error){
@@ -33,13 +33,16 @@ function calculateResults(e){
   const errorDiv = document.createElement('div');
 
   const card = document.querySelector('.card');
-
   const heading = document.querySelector('.heading');
 
   errorDiv.className = 'alert alert-danger';
-
   errorDiv.appendChild(document.createTextNode(error));
 
   card.insertBefore(errorDiv, heading);
 
+  setTimeout(clearError, 2000)
+ }
+
+ function clearError(){
+   document.querySelector('.alert').remove();
  }
