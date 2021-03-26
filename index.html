@@ -7,8 +7,12 @@
 
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="./app.css"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><h1 class="heading display-5 pb-5"></h1>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <style>
+     #loading, #results{
+       display: none;
+     }
+   </style>
   </head>
   <body class="bg-dark">
     <div class="container">
@@ -36,9 +40,9 @@
                 <input type="submit" value="Calculate" class="btn btn-dark btn-block">
               </div>
             </form>
-             <!-- <div id="loading">
+             <div id="loading">
                <img src="img/giphy.gif" alt="">
-             </div> -->
+             </div>
             <div id="results" class="pt-4">
             <h5>Results</h5>
             <div class="form-group">
